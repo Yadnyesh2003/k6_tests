@@ -1,0 +1,4 @@
+{
+  "BASE_URL": "https://lab1-be-us.vectorflow.app",
+  "SECRET_KEY": "your-secret-key-1234567890abcdef"
+}

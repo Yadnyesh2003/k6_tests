@@ -1,0 +1,49 @@
+.DS_Store
+Thumbs.db
+
+# Node
+node_modules/
+npm-debug.log*
+.pnp/*
+.pnp.js
+
+# Logs
+logs/
+*.log
+
+# Environment files
+.env
+.env.*.local
+
+# Editor directories
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build / distribution
+dist/
+build/
+coverage/
+.nyc_output/
+.cache/
+
+# OS generated files
+ehthumbs.db
+Icon?
+
+# Secrets / keys
+*.pem
+*.key
+*.p12
+
+# k6 artifacts
+k6-report/
+results/
+artifacts/
+
+# Temporary files
+tmp/
+temp/
