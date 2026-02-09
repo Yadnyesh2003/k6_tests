@@ -13,6 +13,17 @@ export const payloads = {
     () => JSON.parse(open("../payloads/procurement/getProcPlanningData.json"))
   ),
 
+  "procurement/getOpenSODetailsData": new SharedArray(
+    "procurement_getOpenSODetailsData",
+    () => JSON.parse(open("../payloads/procurement/getOpenSODetailsData.json"))
+  ),
+
+  "procurement/getOpenSOSummaryData": new SharedArray(
+    "procurement_getOpenSOSummaryData",
+    () => JSON.parse(open("../payloads/procurement/getOpenSOSummaryData.json"))
+  ),
+
+
 //   "procurement/getSuppliers": new SharedArray(
 //     "procurement_getSuppliers",
 //     () => JSON.parse(open("../payloads/procurement/getSuppliers.json"))

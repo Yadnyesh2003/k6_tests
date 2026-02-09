@@ -7,9 +7,9 @@ export const options = {
       executor: "ramping-vus",
       startVUs: 1,
       stages: [
-        { duration: "30s", target: 20 },
-        { duration: "2m", target: 50 },
-        { duration: "30s", target: 0 },
+        { duration: "30s", target: 10 },
+        { duration: "1m", target: 15 },
+        { duration: "10s", target: 0 },
       ],
     },
   },

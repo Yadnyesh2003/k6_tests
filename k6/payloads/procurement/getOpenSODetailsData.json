@@ -1,0 +1,35 @@
+[
+  {
+    "params": {
+      "Color": "Black,Red,Yellow",
+      "KitStatus": "NK",
+      "S": 0,
+      "E": 0,
+      "page": 1,
+      "page_size": 500
+    },
+    "body": {}
+  },
+  {
+    "params": {
+      "Color": "Green,,",
+      "KitStatus": "FK",
+      "S": 0,
+      "E": 0,
+      "page": 1,
+      "page_size": 500
+    },
+    "body": {}
+  },
+    {
+        "params": {
+        "Color": "Black,Red,Yellow",
+        "KitStatus": "FK",
+        "S": 0,
+        "E": 0,
+        "page": 1,
+        "page_size": 500
+        },
+        "body": {}
+    }
+]

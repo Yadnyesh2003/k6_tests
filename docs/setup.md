@@ -108,9 +108,18 @@ A GUI window will open.
 
 In the GUI:
 
-- **Path:** `C:\prometheus\prometheus-3.5.1.windows-amd64\prometheus.exe`  
-- **Startup directory:** `C:\prometheus\prometheus-3.5.1.windows-amd64`  
-- **Arguments:** `--config.file=C:\prometheus\prometheus-3.5.1.windows-amd64\prometheus.yml`  
+- **Path:** 
+```bash
+C:\prometheus\prometheus-3.5.1.windows-amd64\prometheus.exe
+```
+- **Startup directory:** 
+```bash
+C:\prometheus\prometheus-3.5.1.windows-amd64
+```
+- **Arguments:** 
+```bash
+--config.file=C:\prometheus\prometheus-3.5.1.windows-amd64\prometheus.yml --web.enable-remote-write-receiver
+``` 
 
 **Optional Details Tab:**  
 - Display Name: Prometheus  

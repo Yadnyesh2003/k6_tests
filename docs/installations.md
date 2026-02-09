@@ -31,7 +31,7 @@ Go to [nssm Download](https://nssm.cc/download) and download the zip file presen
 ## Prometheus
 Used for monitoring and alerting, specifically tracking time-series metrics from applications and infrastructure.  
 
-Go to [Prometheus Download](https://prometheus.io/download/) and download the LTS (Long Term Support) version of Prometheus zip file for Windows OS.
+Go to [Prometheus Download](https://prometheus.io/download/#prometheus) and download the LTS (Long Term Support) version of Prometheus zip file for Windows OS.
 
 ---
 
