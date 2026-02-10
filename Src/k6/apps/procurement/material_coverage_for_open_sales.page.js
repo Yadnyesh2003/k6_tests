@@ -9,8 +9,8 @@ import { buildQueryString, sleepRandom } from "../../lib/utils.js";
  */
 export function getOpenSOSummaryData(user) {
 
-//   const payloadObj = randomPayload("material_coverage", "getOpenSOSummaryData") || {};
-  const payload = {};
+  const payloadObj = randomPayload("procurement", "getOpenSOSummaryData") || {};
+  const payload = payloadObj.body|| {};
 
   put(
     `${config.BASE_URL}/api/mto/getOpenSOSummaryData/`,
@@ -27,7 +27,7 @@ export function getOpenSOSummaryData(user) {
  */
 export function getOpenSODetailsData(user) {
     // Pick a random payload object from your JSON
-    const payloadObj = randomPayload("material_coverage", "getOpenSODetailsData") || {};
+    const payloadObj = randomPayload("procurement", "getOpenSODetailsData") || {};
 
     const params = payloadObj.params || {}; // query parameters
     const payload = payloadObj.body || {};  // empty body in your case
