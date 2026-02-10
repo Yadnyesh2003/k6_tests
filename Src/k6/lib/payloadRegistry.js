@@ -23,6 +23,16 @@ export const payloads = {
     () => JSON.parse(open("../payloads/procurement/getOpenSOSummaryData.json"))
   ),
 
+  "procurement/getMaterialRequirementData": new SharedArray(
+    "procurement_getMaterialRequirementData",
+    () => JSON.parse(open("../payloads/procurement/getMaterialRequirementData.json"))
+  ),
+
+  "procurement/getMaterialRequirementDayWiseData": new SharedArray(
+    "procurement_getMaterialRequirementDayWiseData",
+    () => JSON.parse(open("../payloads/procurement/getMaterialRequirementDayWiseData.json"))
+  ),
+
 
 //   "procurement/getSuppliers": new SharedArray(
 //     "procurement_getSuppliers",
