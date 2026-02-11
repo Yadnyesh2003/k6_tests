@@ -2,7 +2,7 @@ import { getProcPlanningData } from "../apps/procurement/procurement_planning.pa
 import { getOpenSOSummaryData, getOpenSODetailsData } from "../apps/procurement/material_coverage_for_open_sales.page.js";
 import { getMaterialRequirementData, getMaterialRequirementDayWiseData } from "../apps/procurement/material_requirement.page.js";
 import { getDayWiseCoverageData } from "../apps/procurement/day_wise_coverage.page.js";
-import { getRMPMOrderwiseCoverageData } from "../apps/procurement/rm_pm_orderwise_coverage.page.js";
+import { getRMPMCoverageData } from "../apps/procurement/rm_pm_orderwise_coverage.page.js";
 
 export function procurementWorkflow(user) {
 
@@ -16,6 +16,6 @@ export function procurementWorkflow(user) {
     // getMaterialRequirementData(user);
     // getMaterialRequirementDayWiseData(user);
     // getDayWiseCoverageData(user);
-    getRMPMOrderwiseCoverageData(user);
+    getRMPMCoverageData(user);
   }
 }
