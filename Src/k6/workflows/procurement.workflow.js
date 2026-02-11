@@ -8,10 +8,10 @@ export function procurementWorkflow(user) {
   const r = Math.random();
 
   if (r < 0.75) {
-    // getOpenSOSummaryData(user);
-    // getOpenSODetailsData(user);
-    // getProcPlanningData(user);
-    // getMaterialRequirementData(user);
+    getOpenSOSummaryData(user);
+    getOpenSODetailsData(user);
+    getProcPlanningData(user);
+    getMaterialRequirementData(user);
     getMaterialRequirementDayWiseData(user);
   }
 }
