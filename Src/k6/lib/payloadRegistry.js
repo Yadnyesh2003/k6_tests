@@ -33,6 +33,15 @@ export const payloads = {
     () => JSON.parse(open("../payloads/procurement/getMaterialRequirementDayWiseData.json"))
   ),
 
+  "procurement/getDayWiseCoverageData": new SharedArray(
+    "procurement_getDayWiseCoverageData",
+    () => JSON.parse(open("../payloads/procurement/getDayWiseCoverageData.json"))
+  ),
+
+  "procurement/getRMPMCoverageData": new SharedArray(
+    "procurement_getRMPMCoverageData",
+    () => JSON.parse(open("../payloads/procurement/getRMPMCoverageData.json"))
+  ),
 
 //   "procurement/getSuppliers": new SharedArray(
 //     "procurement_getSuppliers",

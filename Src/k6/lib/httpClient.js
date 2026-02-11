@@ -28,6 +28,25 @@ function recordMetrics(res, tags = {}) {
   }
 }
 
+export function get(url, headers, tags = {}) {
+  httpReqInFlight.add(1, tags);
+
+  const res = http.get(url, {
+    headers,
+    tags,
+  });
+
+  recordMetrics(res, tags);
+
+  check(res, {
+    "status 200": (r) => r.status === 200,
+  });
+
+  httpReqInFlight.add(-1, tags);
+  return res;
+}
+
+
 // PUT request wrapper
 export function put(url, body, headers, tags = {}) {
   httpReqInFlight.add(1, tags);
