@@ -28,7 +28,27 @@ function recordMetrics(res, tags = {}) {
   }
 }
 
-export function get(url, headers, tags = {}) {
+// export function get(url, body = {}, headers = {}, tags = {}) {
+//   // Some callers pass (url, payload, headers, tags). GET doesn't use a body,
+//   // but we accept it to keep call sites unchanged.
+//   httpReqInFlight.add(1, tags);
+
+//   const res = http.get(url, {
+//     headers,
+//     tags,
+//   });
+
+//   recordMetrics(res, tags);
+
+//   check(res, {
+//     "status 200": (r) => r.status === 200,
+//   });
+
+//   httpReqInFlight.add(-1, tags);
+//   return res;
+// }
+
+export function get(url, body, headers, tags = {}) {
   httpReqInFlight.add(1, tags);
 
   const res = http.get(url, {

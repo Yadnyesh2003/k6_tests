@@ -43,6 +43,26 @@ export const payloads = {
     () => JSON.parse(open("../payloads/procurement/getRMPMCoverageData.json"))
   ),
 
+  "procurement/getRMPMBufferTrendData": new SharedArray(
+    "procurement_getRMPMBufferTrendData",
+    () => JSON.parse(open("../payloads/procurement/getRMPMBufferTrendData.json"))
+  ),
+
+  "procurement/getExpiditingRMData": new SharedArray(
+    "procurement_getExpiditingRMData",
+    () => JSON.parse(open("../payloads/procurement/getExpiditingRMData.json"))
+  ),
+
+  "procurement/getProdDataAfterSimulation": new SharedArray(
+    "procurement_getProdDataAfterSimulation",
+    () => JSON.parse(open("../payloads/procurement/getProdDataAfterSimulation.json"))
+  ),
+
+  "procurement/updateProcurementPlanningSimulatedQty": new SharedArray(
+    "procurement_updateProcurementPlanningSimulatedQty", 
+    () => JSON.parse(open("../payloads/procurement/updateProcurementPlanningSimulatedQty.json")) 
+  ),
+
 //   "procurement/getSuppliers": new SharedArray(
 //     "procurement_getSuppliers",
 //     () => JSON.parse(open("../payloads/procurement/getSuppliers.json"))
