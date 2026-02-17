@@ -3,9 +3,9 @@ import { randomPayload } from "../../lib/payloadLoader.js";
 import { buildHeaders } from "../../lib/headers.js";
 import { get, put } from "../../lib/httpClient.js";
 import { buildQueryString, sleepRandom } from "../../lib/utils.js";
-import { sleep } from "k6";
+import { registerAPI } from "../../core/registry.js";
 
-export function getExpiditingRMData(user) {
+function getExpiditingRMData(user) {
     const payloadObj = randomPayload("procurement", "getExpiditingRMData") || {};
     const payload = payloadObj.body || {};
     const params = payloadObj.params || {};
@@ -15,9 +15,22 @@ export function getExpiditingRMData(user) {
         `${config.BASE_URL}/api/mto/getExpiditingRMData/?${queryString}`,
         payload,
         buildHeaders(user),
-        { name: "procurement_getExpiditingRMData" }
+        {
+            tags:{
+                api: "getExpiditingRMData",
+                page: "expiditing_rm_suppliers",
+                app: "procurement"
+            }
+        }
     )
 
     sleepRandom(config.waitMin, config.waitMax);
 
 }
+
+registerAPI({
+    name: "getExpiditingRMData",
+    page: "expiditing_rm_suppliers",
+    app: "procurement",
+    fn: getExpiditingRMData
+});

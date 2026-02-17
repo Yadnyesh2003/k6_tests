@@ -47,3 +47,7 @@ artifacts/
 # Temporary files
 tmp/
 temp/
+
+# Data files
+users.json
+userData.csv

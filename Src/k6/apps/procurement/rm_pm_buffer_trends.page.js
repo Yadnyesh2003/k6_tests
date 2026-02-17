@@ -3,8 +3,9 @@ import { randomPayload } from "../../lib/payloadLoader.js";
 import { buildHeaders } from "../../lib/headers.js";
 import { put } from "../../lib/httpClient.js";
 import { buildQueryString, sleepRandom } from "../../lib/utils.js";
+import { registerAPI } from "../../core/registry.js";
 
-export function getRMPMBufferTrendData(user) {
+function getRMPMBufferTrendData(user) {
     const payloadObj = randomPayload("procurement", "getRMPMBufferTrendData") || {};
     const payload = payloadObj.body || {};
     const params = payloadObj.params || {};
@@ -19,3 +20,10 @@ export function getRMPMBufferTrendData(user) {
 
     sleepRandom(config.waitMin, config.waitMax);
 }
+
+registerAPI({
+    name: "getRMPMBufferTrendData",
+    page: "rm_pm_buffer_trends",
+    app: "procurement",
+    fn: getRMPMBufferTrendData
+});

@@ -26,11 +26,12 @@ import { randomPayload } from "../../lib/payloadLoader.js";
 import { buildHeaders } from "../../lib/headers.js";
 import { put, get, post } from "../../lib/httpClient.js";
 import { buildQueryString, sleepRandom } from "../../lib/utils.js";
+import { registerAPI } from "../../core/registry.js";
 
 /**
  * Main Flow
  */
-export function getProcPlanningData(user) {
+function getProcPlanningData(user) {
 
   const payloadObj = randomPayload("procurement", "getProcPlanningData");
   const payload = payloadObj.body || {};
@@ -43,7 +44,13 @@ export function getProcPlanningData(user) {
       `${config.BASE_URL}/api/mto/getProcPlanningData/?${queryString}`,
       payload,
       buildHeaders(user),
-      { name: "procurement_getProcPlanningData" }
+      {
+        // tags:{
+          api: "getProcPlanningData",
+          page: "procurement_planning",
+          app: "procurement"
+        // }
+      }
     );
 
   console.log(`${user.username} → getProcPlanningData → Status: ${res.status}`);
@@ -52,7 +59,7 @@ export function getProcPlanningData(user) {
 }
 
 
-export function updateProcurementPlanningSimulatedQty(user) {
+function updateProcurementPlanningSimulatedQty(user) {
   const payloadObj = randomPayload("procurement", "updateProcurementPlanningSimulatedQty");
   const payload = payloadObj.body || {};
   const params = payloadObj.params || {};
@@ -67,7 +74,13 @@ export function updateProcurementPlanningSimulatedQty(user) {
       // payload,
       requestBody,
       buildHeaders(user),
-      { name: "procurement_updateProcurementPlanningSimulatedQty" }
+      {
+        tags:{
+          api: "updateProcurementPlanningSimulatedQty",
+          page: "procurement_planning",
+          app: "procurement"
+        }
+      }
     );
 
   console.log(`${user.username} → updateProcurementPlanningSimulatedQty → Status: ${res.status}`);
@@ -76,7 +89,7 @@ export function updateProcurementPlanningSimulatedQty(user) {
 }
 
 
-export function getProdDataAfterSimulation(user) {
+function getProdDataAfterSimulation(user) {
   const payloadObj = randomPayload("procurement", "getProdDataAfterSimulation");
   const payload = payloadObj.body || {};
   const params = payloadObj.params || {};
@@ -88,7 +101,13 @@ export function getProdDataAfterSimulation(user) {
       `${config.BASE_URL}/api/mto/getProdDataAfterSimulation/?${queryString}`,
       payload,
       buildHeaders(user),
-      { name: "procurement_getProdDataAfterSimulation" }
+      {
+        tags:{
+          api: "getProdDataAfterSimulation",
+          page: "procurement_planning",
+          app: "procurement"
+        }
+      }
     );
 
   console.log(`${user.username} → getProdDataAfterSimulation → Status: ${res.status}`);
@@ -96,3 +115,27 @@ export function getProdDataAfterSimulation(user) {
 
   sleepRandom(config.waitMin, config.waitMax);
 }
+
+
+registerAPI({
+  name: "getProcPlanningData",
+  page: "procurement_planning",
+  app: "procurement",
+  fn: getProcPlanningData
+});
+
+registerAPI({
+  name: "updateProcurementPlanningSimulatedQty",
+  page: "procurement_planning",
+  app: "procurement",
+  fn: updateProcurementPlanningSimulatedQty
+});
+
+registerAPI({
+  name: "getProdDataAfterSimulation",
+  page: "procurement_planning",
+  app: "procurement",
+  fn: getProdDataAfterSimulation
+});
+
+//

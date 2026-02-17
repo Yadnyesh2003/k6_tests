@@ -3,8 +3,9 @@ import { randomPayload } from "../../lib/payloadLoader.js";
 import { buildHeaders } from "../../lib/headers.js";
 import { get, put } from "../../lib/httpClient.js";
 import { buildQueryString, sleepRandom } from "../../lib/utils.js";
+import { registerAPI } from "../../core/registry.js";
 
-export function getRMPMCoverageData(user) {
+function getRMPMCoverageData(user) {
     const payloadObj = randomPayload("procurement", "getRMPMCoverageData") || {};
     const payload = payloadObj.body || {};
     const params = payloadObj.params || {};
@@ -15,7 +16,13 @@ export function getRMPMCoverageData(user) {
             `${config.BASE_URL}/api/mto/getRMPMCoverageData/?${queryString}`,
             payload,
             buildHeaders(user),
-            { name: "procurement_getRMPMCoverageData_graph" }
+            {
+                tags:{
+                    api: "getRMPMCoverageData_graph",
+                    page: "rm_pm_orderwise_coverage",
+                    app: "procurement"
+                }
+            }
         )
     }
     else{
@@ -23,8 +30,21 @@ export function getRMPMCoverageData(user) {
             `${config.BASE_URL}/api/mto/getRMPMCoverageData/?${queryString}`,
             payload,
             buildHeaders(user),
-            { name: "procurement_getRMPMCoverageData_grid" }
+            {
+                tags:{
+                    api: "getRMPMCoverageData",
+                    page: "rm_pm_orderwise_coverage",
+                    app: "procurement"
+                }
+            }
         );
     }
 
 }
+
+registerAPI({
+    name: "getRMPMCoverageData",
+    page: "rm_pm_orderwise_coverage",
+    app: "procurement",
+    fn: getRMPMCoverageData
+});
