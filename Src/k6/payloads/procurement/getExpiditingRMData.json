@@ -1,0 +1,26 @@
+[
+    {
+        "params": {
+            "supplier_horizon": "14"
+        },
+        "body": {}
+    },
+    {
+        "params": {
+            "supplier_horizon": "7"
+        },
+        "body": {}
+    },
+    {
+        "params": {
+            "rm_horizon": "3"
+        },
+        "body": {}
+    },
+    {
+        "params": {
+            "rm_horizon": "1"
+        },
+        "body": {}
+    }
+]

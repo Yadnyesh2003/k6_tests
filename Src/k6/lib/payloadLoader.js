@@ -27,7 +27,8 @@ import { pickRandom } from "./utils.js";
 export function randomPayload(app, api) {
     const arr = payloads[`${app}/${api}`];
 
-    if (!Array.isArray(arr) || arr.length === 0) {
+    // SharedArray is array-like but not a real Array, so avoid Array.isArray checks.
+    if (!arr || typeof arr.length !== "number" || arr.length === 0) {
         console.warn(`No payload found for ${app}/${api}, returning empty object`);
         return { params: {}, body: {} }; // safe default
     }

@@ -1,0 +1,20 @@
+[
+    {
+        "params": {
+            "releaseDate": "2026-02-12", 
+            "eas": 0,
+            "page": 1, 
+            "page_size": 500
+        },
+        "body": {}
+    },
+    {
+        "params": {
+            "releaseDate": "2026-02-12", 
+            "eas": 1,
+            "page": 1, 
+            "page_size": 500
+        },
+        "body": {}
+    }
+]

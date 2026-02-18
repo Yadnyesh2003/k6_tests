@@ -28,41 +28,95 @@ function recordMetrics(res, tags = {}) {
   }
 }
 
-// PUT request wrapper
-export function put(url, body, headers, tags = {}) {
-  httpReqInFlight.add(1, tags);
+// export function get(url, body = {}, headers = {}, tags = {}) {
+//   // Some callers pass (url, payload, headers, tags). GET doesn't use a body,
+//   // but we accept it to keep call sites unchanged.
+//   httpReqInFlight.add(1, tags);
 
-  const res = http.put(url, JSON.stringify(body), {
+//   const res = http.get(url, {
+//     headers,
+//     tags,
+//   });
+
+//   recordMetrics(res, tags);
+
+//   check(res, {
+//     "status 200": (r) => r.status === 200,
+//   });
+
+//   httpReqInFlight.add(-1, tags);
+//   return res;
+// }
+
+let globalTags = {};
+
+export function setGlobalTags(tags) {
+  globalTags = { ...(tags || {}) };
+}
+
+function normalizeTagsParam(tags) {
+  // support either a flat tags obj or { tags: { ... } } legacy callers
+  if (!tags) return {};
+  if (tags.tags && typeof tags.tags === "object") return tags.tags;
+  return tags;
+}
+
+export function get(url, body, headers, tags = {}) {
+  const merged = { ...globalTags, ...normalizeTagsParam(tags) };
+  httpReqInFlight.add(1, merged);
+
+  const res = http.get(url, {
     headers,
-    tags,
+    tags: merged,
   });
 
-  recordMetrics(res, tags);
+  recordMetrics(res, merged);
 
-  // Optional checks for specific status codes
   check(res, {
     "status 200": (r) => r.status === 200,
   });
 
-  httpReqInFlight.add(-1, tags);
+  httpReqInFlight.add(-1, merged);
+  return res;
+}
+
+
+// PUT request wrapper
+export function put(url, body, headers, tags = {}) {
+  const merged = { ...globalTags, ...normalizeTagsParam(tags) };
+  httpReqInFlight.add(1, merged);
+
+  const res = http.put(url, JSON.stringify(body), {
+    headers,
+    tags: merged,
+  });
+
+  recordMetrics(res, merged);
+
+  check(res, {
+    "status 200": (r) => r.status === 200,
+  });
+
+  httpReqInFlight.add(-1, merged);
   return res;
 }
 
 // POST request wrapper
 export function post(url, body, headers, tags = {}) {
-  httpReqInFlight.add(1, tags);
+  const merged = { ...globalTags, ...normalizeTagsParam(tags) };
+  httpReqInFlight.add(1, merged);
 
   const res = http.post(url, JSON.stringify(body), {
     headers,
-    tags,
+    tags: merged,
   });
 
-  recordMetrics(res, tags);
+  recordMetrics(res, merged);
 
   check(res, {
     "status 200": (r) => r.status === 200,
   });
 
-  httpReqInFlight.add(-1, tags);
+  httpReqInFlight.add(-1, merged);
   return res;
 }

@@ -1,0 +1,16 @@
+[
+    {
+        "params":{
+            "graphflag": "1"
+        },
+        "body":{}
+    },
+    {
+        "params":{
+            "graphflag": "0",
+            "page": "1",
+            "page_size": "500"
+        },
+        "body":{}
+    }
+]
