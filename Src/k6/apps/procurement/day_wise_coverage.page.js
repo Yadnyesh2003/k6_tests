@@ -16,11 +16,9 @@ function getDayWiseCoverageData(user) {
     payload,
     buildHeaders(user),
     {
-      tags: {
-        api: "getDayWiseCoverageData",
-        page: "day_wise_coverage",
-        app: "procurement"
-      }
+      api: "getDayWiseCoverageData",
+      page: "day_wise_coverage",
+      app: "procurement"
     }
   );
   sleepRandom(config.waitMin, config.waitMax);

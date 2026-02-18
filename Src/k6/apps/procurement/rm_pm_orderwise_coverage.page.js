@@ -17,11 +17,9 @@ function getRMPMCoverageData(user) {
             payload,
             buildHeaders(user),
             {
-                tags:{
-                    api: "getRMPMCoverageData_graph",
-                    page: "rm_pm_orderwise_coverage",
-                    app: "procurement"
-                }
+                api: "getRMPMCoverageData_graph",
+                page: "rm_pm_orderwise_coverage",
+                app: "procurement"
             }
         )
     }
@@ -31,11 +29,9 @@ function getRMPMCoverageData(user) {
             payload,
             buildHeaders(user),
             {
-                tags:{
-                    api: "getRMPMCoverageData",
-                    page: "rm_pm_orderwise_coverage",
-                    app: "procurement"
-                }
+                api: "getRMPMCoverageData",
+                page: "rm_pm_orderwise_coverage",
+                app: "procurement"
             }
         );
     }

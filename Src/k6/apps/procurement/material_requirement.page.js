@@ -16,11 +16,9 @@ function getMaterialRequirementData(user) {
     payload,
     buildHeaders(user),
     {
-      tags: {
-        api: "getMaterialRequirementData",
-        page: "material_requirement",
-        app: "procurement"
-      }
+      api: "getMaterialRequirementData",
+      page: "material_requirement",
+      app: "procurement"
     }
   );
 
@@ -38,11 +36,9 @@ export function getMaterialRequirementDayWiseData(user) {
         payload,
         buildHeaders(user),
         {
-          tags: {
-            api: "getMaterialRequirementDayWiseData",
-            page: "material_requirement",
-            app: "procurement"
-          }
+          api: "getMaterialRequirementDayWiseData",
+          page: "material_requirement",
+          app: "procurement"
         }
     );
     

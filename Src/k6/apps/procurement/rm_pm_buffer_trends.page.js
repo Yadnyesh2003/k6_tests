@@ -15,7 +15,11 @@ function getRMPMBufferTrendData(user) {
         `${config.BASE_URL}/api/mto/getRMPMBufferTrendData/?${queryString}`,
         payload,
         buildHeaders(user),
-        { name: "procurement_getRMPMBufferTrendData" }
+        {
+            api: "getRMPMBufferTrendData",
+            page: "rm_pm_buffer_trends",
+            app: "procurement"
+        }
     )
 
     sleepRandom(config.waitMin, config.waitMax);
