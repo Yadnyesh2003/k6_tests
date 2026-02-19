@@ -69,6 +69,11 @@ export const payloads = {
     () => JSON.parse(open("../payloads/poogi/getPoogiReasonForDealyedOrdersData.json"))
   ),
 
+  "poogi/getResourceUtilizationAndWIPProfileData": new SharedArray(
+    "poogi_getResourceUtilizationAndWIPProfileData",
+    () => JSON.parse(open("../payloads/poogi/getResourceUtilizationAndWIPProfileData.json"))
+  ),
+
 //   "procurement/getSuppliers": new SharedArray(
 //     "procurement_getSuppliers",
 //     () => JSON.parse(open("../payloads/procurement/getSuppliers.json"))
