@@ -14,6 +14,15 @@ import "../apps/procurement/rm_pm_orderwise_coverage.page.js";
 import "../apps/production/due_date_quotation.page.js";
 import "../apps/production/enquiry_response.page.js";
 
+// Apps - poogi
+import "../apps/poogi/reason_for_delayed_orders.page.js";
+import "../apps/poogi/trend_of_failure_reasons.page.js";
+import "../apps/poogi/otif_analysis.page.js";
+import "../apps/poogi/ot_and_if_analysis.page.js";
+import "../apps/poogi/resource_utilization_and_wip_profile.page.js";
+import "../apps/poogi/lead_time.page.js";
+import "../apps/poogi/top_failure_reasons.page.js";
+
 // Workflows
 import "../workflows/procurement.workflow.js";
 import "../workflows/production.workflow.js";
