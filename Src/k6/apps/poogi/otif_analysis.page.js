@@ -22,6 +22,7 @@ function getOTIFAnalysisData(user) {
                 app: "poogi"
             }
         );
+        sleepRandom(config.waitMin, config.waitMax);
     }
     else{
         put(
@@ -34,6 +35,7 @@ function getOTIFAnalysisData(user) {
                 app: "poogi"
             }
          );
+         sleepRandom(config.waitMin, config.waitMax);
     }
 }
 
