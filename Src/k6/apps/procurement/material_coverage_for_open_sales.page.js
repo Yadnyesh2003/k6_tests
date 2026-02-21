@@ -9,24 +9,23 @@ import { registerAPI } from "../../core/registry.js";
  * First API: getOpenSOSummaryData
  */
 function getOpenSOSummaryData(user) {
+    const payloadObj = randomPayload("procurement", "getOpenSOSummaryData") || {};
+    const params = payloadObj.params || {};
+    const payload = payloadObj.body || {};
+    const queryString = buildQueryString(params);
 
-  const payloadObj = randomPayload("procurement", "getOpenSOSummaryData") || {};
-  const payload = payloadObj.body|| {};
+    put(
+        `${config.BASE_URL}/api/mto/getOpenSOSummaryData/?${queryString}`,
+        payload,
+        buildHeaders(user),
+        {
+          api: "getOpenSOSummaryData",
+          page: "material_coverage_for_open_sales",
+          app: "procurement"
+        }
+    );
 
-  put(
-    `${config.BASE_URL}/api/mto/getOpenSOSummaryData/`,
-    payload,
-    buildHeaders(user),
-    {
-      tags:{
-        name: "material_coverage_getOpenSOSummaryData",
-        page: "material_coverage_for_open_sales",
-        app: "procurement"
-      }
-    }
-  );
-
-  sleepRandom(config.waitMin, config.waitMax);
+    sleepRandom(config.waitMin, config.waitMax);
 }
 
 /**
@@ -46,11 +45,9 @@ function getOpenSODetailsData(user) {
         payload,
         buildHeaders(user),
         {
-          tags:{
-            name: "material_coverage_getOpenSODetailsData",
-            page: "material_coverage_for_open_sales",
-            app: "procurement"
-          }
+          name: "material_coverage_getOpenSODetailsData",
+          page: "material_coverage_for_open_sales",
+          app: "procurement"
         }
     );
 

@@ -16,11 +16,9 @@ function getExpiditingRMData(user) {
         payload,
         buildHeaders(user),
         {
-            tags:{
-                api: "getExpiditingRMData",
-                page: "expiditing_rm_suppliers",
-                app: "procurement"
-            }
+            api: "getExpiditingRMData",
+            page: "expiditing_rm_suppliers",
+            app: "procurement"
         }
     )
 

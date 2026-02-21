@@ -63,6 +63,29 @@ export const payloads = {
     () => JSON.parse(open("../payloads/procurement/updateProcurementPlanningSimulatedQty.json")) 
   ),
 
+  // POOGI
+  "poogi/getPoogiReasonForDealyedOrdersData": new SharedArray(
+    "poogi_getPoogiReasonForDealyedOrdersData",
+    () => JSON.parse(open("../payloads/poogi/getPoogiReasonForDealyedOrdersData.json"))
+  ),
+
+  "poogi/getResourceUtilizationAndWIPProfileData": new SharedArray(
+    "poogi_getResourceUtilizationAndWIPProfileData",
+    () => JSON.parse(open("../payloads/poogi/getResourceUtilizationAndWIPProfileData.json"))
+  ),
+
+  "poogi/getOTIFAnalysisData": new SharedArray(
+    "poogi_getOTIFAnalysisData",
+    () => JSON.parse(open("../payloads/poogi/getOTIFAnalysisData.json"))
+  ),
+
+  "poogi/getOTandIFAnalysisData": new SharedArray(
+    "poogi_getOTandIFAnalysisData",
+    () => JSON.parse(open("../payloads/poogi/getOTandIFAnalysisData.json"))
+  ),
+
+
+
 //   "procurement/getSuppliers": new SharedArray(
 //     "procurement_getSuppliers",
 //     () => JSON.parse(open("../payloads/procurement/getSuppliers.json"))
