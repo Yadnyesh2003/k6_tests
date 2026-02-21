@@ -124,11 +124,14 @@ import axios from "axios";
 import { encryptPassword } from "./encryption.js";
 import { CookieJar } from "tough-cookie";
 import { wrapper } from "axios-cookiejar-support";
+import path from "path";
+
 
 const config = JSON.parse(fs.readFileSync("./config.json"));
 
 const CSV_FILE = "./userData.csv";
 const OUTPUT_FILE = "../k6/data/users.json";
+const outputDir = path.dirname(OUTPUT_FILE);
 
 /**
  * Create axios instance with shared cookie jar
@@ -211,6 +214,10 @@ async function main() {
         console.log(e.message);
       }
     }
+  }
+
+  if (!fs.existsSync(outputDir)) {
+    fs.mkdirSync(outputDir, { recursive: true });
   }
 
   fs.writeFileSync(OUTPUT_FILE, JSON.stringify(result, null, 2));
