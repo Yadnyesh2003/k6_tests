@@ -59,8 +59,8 @@ export const payloads = {
   ),
 
   "procurement/updateProcurementPlanningSimulatedQty": new SharedArray(
-    "procurement_updateProcurementPlanningSimulatedQty", 
-    () => JSON.parse(open("../payloads/procurement/updateProcurementPlanningSimulatedQty.json")) 
+    "procurement_updateProcurementPlanningSimulatedQty",
+    () => JSON.parse(open("../payloads/procurement/updateProcurementPlanningSimulatedQty.json"))
   ),
 
   // POOGI
@@ -84,21 +84,25 @@ export const payloads = {
     () => JSON.parse(open("../payloads/poogi/getOTandIFAnalysisData.json"))
   ),
 
+  "poogi/getLeadTimeData": new SharedArray(
+    "poogi_getLeadTimeData",
+    () => JSON.parse(open("../payloads/poogi/getLeadTimeData.json"))
+  ),
 
 
-//   "procurement/getSuppliers": new SharedArray(
-//     "procurement_getSuppliers",
-//     () => JSON.parse(open("../payloads/procurement/getSuppliers.json"))
-//   ),
+  //   "procurement/getSuppliers": new SharedArray(
+  //     "procurement_getSuppliers",
+  //     () => JSON.parse(open("../payloads/procurement/getSuppliers.json"))
+  //   ),
 
-//   "procurement/releaseOrders": new SharedArray(
-//     "procurement_releaseOrders",
-//     () => JSON.parse(open("../payloads/procurement/releaseOrders.json"))
-//   ),
+  //   "procurement/releaseOrders": new SharedArray(
+  //     "procurement_releaseOrders",
+  //     () => JSON.parse(open("../payloads/procurement/releaseOrders.json"))
+  //   ),
 
-//   // PRODUCTION
-//   "production/getProductionPlan": new SharedArray(
-//     "production_getProductionPlan",
-//     () => JSON.parse(open("../payloads/production/getProductionPlan.json"))
-//   ),
+  //   // PRODUCTION
+  //   "production/getProductionPlan": new SharedArray(
+  //     "production_getProductionPlan",
+  //     () => JSON.parse(open("../payloads/production/getProductionPlan.json"))
+  //   ),
 };
