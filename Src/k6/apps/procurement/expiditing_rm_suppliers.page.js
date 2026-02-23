@@ -16,7 +16,7 @@ function getExpiditingRMData(user) {
         payload,
         buildHeaders(user),
         {
-            api: "getExpiditingRMData",
+            name: "getExpiditingRMData",
             page: "expiditing_rm_suppliers",
             app: "procurement"
         }

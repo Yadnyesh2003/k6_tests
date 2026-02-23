@@ -16,7 +16,7 @@ function getMaterialRequirementData(user) {
     payload,
     buildHeaders(user),
     {
-      api: "getMaterialRequirementData",
+      name: "getMaterialRequirementData",
       page: "material_requirement",
       app: "procurement"
     }
@@ -36,7 +36,7 @@ export function getMaterialRequirementDayWiseData(user) {
         payload,
         buildHeaders(user),
         {
-          api: "getMaterialRequirementDayWiseData",
+          name: "getMaterialRequirementDayWiseData",
           page: "material_requirement",
           app: "procurement"
         }

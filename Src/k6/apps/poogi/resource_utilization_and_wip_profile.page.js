@@ -12,7 +12,7 @@ function getPlantMasterData(user) {
         payload,
         buildHeaders(user),
         {
-            api: "getPlantmasterData",
+            name: "getPlantMasterData",
             page: "resource_utilization_and_wip_profile",
             app: "poogi"
         }
@@ -27,7 +27,7 @@ function getCCRMasterData(user) {
         payload,
         buildHeaders(user),
         {
-            api: "getCCRMasterData",
+            name: "getCCRMasterData",
             page: "resource_utilization_and_wip_profile",
             app: "poogi"
         }
@@ -42,7 +42,7 @@ function getDeptMasterData(user) {
         payload,
         buildHeaders(user),
         {
-            api: "getDeptMasterData",
+            name: "getDeptMasterData",
             page: "resource_utilization_and_wip_profile",
             app: "poogi"
         }
@@ -60,7 +60,7 @@ function getResourceUtilizationAndWIPProfileData(user) {
         payload,
         buildHeaders(user),
         {
-            api: "getResourceUtilizationAndWIPProfileData",
+            name: "getResourceUtilizationAndWIPProfileData",
             page: "resource_utilization_and_wip_profile",
             app: "poogi"
         }

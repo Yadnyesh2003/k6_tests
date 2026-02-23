@@ -17,7 +17,7 @@ function getOTIFAnalysisData(user) {
             payload,
             buildHeaders(user),
             {
-                api: "getOTIFAnalysisData",
+                name: "getOTIFAnalysisData",
                 page: "otif_analysis",
                 app: "poogi"
             }
@@ -30,7 +30,7 @@ function getOTIFAnalysisData(user) {
             payload,
             buildHeaders(user),
             {
-                api: "getOTIFAnalysisData",
+                name: "getOTIFAnalysisData",
                 page: "otif_analysis",
                 app: "poogi"
             }

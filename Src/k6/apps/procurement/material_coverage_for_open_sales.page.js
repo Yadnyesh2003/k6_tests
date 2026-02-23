@@ -19,7 +19,7 @@ function getOpenSOSummaryData(user) {
         payload,
         buildHeaders(user),
         {
-          api: "getOpenSOSummaryData",
+          name: "getOpenSOSummaryData",
           page: "material_coverage_for_open_sales",
           app: "procurement"
         }

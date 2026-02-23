@@ -17,7 +17,7 @@ function getOTandIFAnalysisData(user) {
             payload,
             buildHeaders(user),
             {
-                api: "getOTandIFAnalysisData",
+                name: "getOTandIFAnalysisData",
                 page: "ot_and_if_analysis",
                 app: "poogi"
             }
@@ -30,7 +30,7 @@ function getOTandIFAnalysisData(user) {
             payload,
             buildHeaders(user),
             {
-                api: "getOTandIFAnalysisData",
+                name: "getOTandIFAnalysisData",
                 page: "ot_and_if_analysis",
                 app: "poogi"
             }

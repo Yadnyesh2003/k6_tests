@@ -45,11 +45,9 @@ function getProcPlanningData(user) {
       payload,
       buildHeaders(user),
       {
-        // tags:{
-          api: "getProcPlanningData",
-          page: "procurement_planning",
-          app: "procurement"
-        // }
+        name: "getProcPlanningData",
+        page: "procurement_planning",
+        app: "procurement"
       }
     );
 
@@ -75,7 +73,7 @@ function updateProcurementPlanningSimulatedQty(user) {
       requestBody,
       buildHeaders(user),
       {
-        api: "updateProcurementPlanningSimulatedQty",
+        name: "updateProcurementPlanningSimulatedQty",
         page: "procurement_planning",
         app: "procurement"
       }
@@ -100,7 +98,7 @@ function getProdDataAfterSimulation(user) {
       payload,
       buildHeaders(user),
       {
-        api: "getProdDataAfterSimulation",
+        name: "getProdDataAfterSimulation",
         page: "procurement_planning",
         app: "procurement"
       }

@@ -1,5 +1,5 @@
 const registry = {
-  apis: new Map(),        // name -> { name, fn, page, app, module }
+  apis: new Map(),        // name -> { name, fn, page, app }
   pages: new Map(),       // page -> [apiName]
   workflows: new Map(),   // workflowName -> [apiName]
   workflowFns: new Map(), // workflowName -> function
@@ -7,13 +7,13 @@ const registry = {
 };
 
 export function registerAPI(def) {
-  // def: { name, page, app, fn, module }
-  const { name, page, app, fn, module } = def;
+  // def: { name, page, app, fn }
+  const { name, page, app, fn } = def;
   if (!name || typeof fn !== "function") {
     throw new Error("registerAPI requires {name, fn}");
   }
 
-  registry.apis.set(name, { name, fn, page, app, module });
+  registry.apis.set(name, { name, fn, page, app });
 
   if (page) {
     if (!registry.pages.has(page)) registry.pages.set(page, []);

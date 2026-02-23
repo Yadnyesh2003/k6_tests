@@ -17,7 +17,7 @@ function getRMPMCoverageData(user) {
             payload,
             buildHeaders(user),
             {
-                api: "getRMPMCoverageData",
+                name: "getRMPMCoverageData",
                 page: "rm_pm_orderwise_coverage",
                 app: "procurement"
             }
@@ -29,7 +29,7 @@ function getRMPMCoverageData(user) {
             payload,
             buildHeaders(user),
             {
-                api: "getRMPMCoverageData",
+                name: "getRMPMCoverageData",
                 page: "rm_pm_orderwise_coverage",
                 app: "procurement"
             }

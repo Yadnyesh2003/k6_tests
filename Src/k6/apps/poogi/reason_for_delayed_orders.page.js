@@ -13,7 +13,7 @@ function getPoogiReasonMasterData(user) {
         payload,
         buildHeaders(user),
         {
-            api: "getPoogiReasonMasterData",
+            name: "getPoogiReasonMasterData",
             page: "reason_for_delayed_orders",
             app: "poogi"
         }
@@ -34,7 +34,7 @@ function getPoogiReasonForDealyedOrdersData(user) {
         payload,
         buildHeaders(user),
         {
-            api: "getPoogiReasonForDealyedOrdersData",
+            name: "getPoogiReasonForDealyedOrdersData",
             page: "reason_for_delayed_orders",
             app: "poogi"
         }

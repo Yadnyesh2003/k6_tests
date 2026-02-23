@@ -16,7 +16,7 @@ function getRMPMBufferTrendData(user) {
         payload,
         buildHeaders(user),
         {
-            api: "getRMPMBufferTrendData",
+            name: "getRMPMBufferTrendData",
             page: "rm_pm_buffer_trends",
             app: "procurement"
         }
