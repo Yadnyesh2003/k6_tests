@@ -27,6 +27,7 @@ import "../apps/poogi/top_failure_reasons.page.js";
 import "../workflows/procurement.workflow.js";
 import "../workflows/production.workflow.js";
 import "../workflows/endToEnd.workflow.js";
+import "../workflows/mixed.workflow.js";
 
 // Scenarios (if you have scenario files that register themselves)
 // import "../scenarios/procurement.scenario.js";

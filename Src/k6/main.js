@@ -42,5 +42,5 @@ export default function () {
 
   const user = getUser();
 
-  executeSelectedAPIs(selection.apis, user, __ENV.SCENARIO);
+  executeSelectedAPIs(selection.apis, user, __ENV.SCENARIO, selection.workflow);
 }

@@ -1,17 +1,15 @@
-import { getApiMeta, getWorkflowsForApi } from "./registry.js";
+import { getApiMeta } from "./registry.js";
 import { setGlobalTags } from "../lib/httpClient.js";
 
-export function executeSelectedAPIs(apiNames, user, scenarioName) {
+export function executeSelectedAPIs(apiNames, user, scenarioName, selectedWorkflow) {
   apiNames.forEach(apiName => {
     const meta = getApiMeta(apiName);
     if (!meta) return;
 
-    const workflows = getWorkflowsForApi(meta.name) || [];
-
     const tags = {
       name: meta.name,
       page: meta.page || "unknown",
-      workflow: Array.isArray(workflows) ? workflows.join("|") : "",
+      workflow: selectedWorkflow || "",
       app: meta.app || "",
       scenario: scenarioName || "default",
     };

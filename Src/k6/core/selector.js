@@ -17,6 +17,25 @@ export function resolveSelection(env) {
 
   const warnings = [];
 
+  // If a workflow is specified, only allow one workflow and ignore API/PAGE inputs
+  let selectedWorkflow = null;
+  if (workflowInput.length > 0) {
+    if (workflowInput.length > 1) {
+      warnings.push(`Only one workflow is allowed; using '${workflowInput[0]}'`);
+    }
+    selectedWorkflow = workflowInput[0];
+    if (registry.workflows.has(selectedWorkflow)) {
+      registry.workflows.get(selectedWorkflow).forEach(api => selectedAPIs.add(api));
+    } else {
+      warnings.push(`Workflow not found: ${selectedWorkflow}`);
+    }
+    return {
+      apis: [...selectedAPIs],
+      warnings,
+      workflow: selectedWorkflow,
+    };
+  }
+
   apiInput.forEach(api => {
     if (registry.apis.has(api))
       selectedAPIs.add(api);
@@ -36,11 +55,8 @@ export function resolveSelection(env) {
 
   workflowInput.forEach(workflow => {
     if (registry.workflows.has(workflow)) {
-      registry.workflows.get(workflow).forEach(api =>
-        selectedAPIs.add(api)
-      );
-    }
-    else
+      registry.workflows.get(workflow).forEach(api => selectedAPIs.add(api));
+    } else
       warnings.push(`Workflow not found: ${workflow}`);
   });
 
@@ -57,5 +73,6 @@ export function resolveSelection(env) {
   return {
     apis: [...selectedAPIs],
     warnings,
+    workflow: null,
   };
 }
