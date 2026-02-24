@@ -14,7 +14,8 @@ export function getRemoteToken(email) {
     });
 
     if (res.status === 200) {
-        return res.json().accessToken;
+        // Now returns the full object { accessToken, expiresAt, user_id, username }
+        return res.json();
     } else {
         console.error(`[TokenClient] Failed to fetch token for ${email}: ${res.status} ${res.body}`);
         return null;
