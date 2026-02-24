@@ -3,7 +3,7 @@ export function getScenarioOptions() {
   const raw = __ENV.SCENARIO || "default";
   const scenario = (raw || "").split(",").map(s => s.trim())[0] || "default";
 
-  switch(scenario) {
+  switch (scenario) {
 
     case "constant_load":
       return {
@@ -25,6 +25,17 @@ export function getScenarioOptions() {
               { duration: "10s", target: 100 },
               { duration: "30s", target: 0 },
             ],
+          },
+        },
+      };
+
+    case "longevity_test":
+      return {
+        scenarios: {
+          longevity_test: {
+            executor: "constant-vus",
+            vus: 10,
+            duration: "45m",
           },
         },
       };
