@@ -94,6 +94,10 @@ export const payloads = {
     () => JSON.parse(open("../payloads/poogi/getTopFailureReasonsData.json"))
   ),
 
+  "poogi/getTrendOfFailureReasonsData": new SharedArray(
+    "poogi_getTrendOfFailureReasonsData",
+    () => JSON.parse(open("../payloads/poogi/getTrendOfFailureReasonsData.json"))
+  ),
 
   //   "procurement/getSuppliers": new SharedArray(
   //     "procurement_getSuppliers",
